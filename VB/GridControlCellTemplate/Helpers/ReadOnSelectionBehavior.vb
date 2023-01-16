@@ -15,8 +15,9 @@ Namespace GridControlCellTemplate.Helpers
         End Sub
 
         Private Sub AssociatedObject_SelectedItemChanged(ByVal sender As Object, ByVal e As SelectedItemChangedEventArgs)
-            Dim selectedItem As Record = Nothing
-            If CSharpImpl.__Assign(selectedItem, TryCast(AssociatedObject.SelectedItem, Record)) IsNot Nothing Then
+            Dim selectedItem = TryCast(AssociatedObject.SelectedItem, Record)
+
+            If selectedItem IsNot Nothing Then
                 selectedItem.IsRead = True
             End If
         End Sub
@@ -29,17 +30,8 @@ Namespace GridControlCellTemplate.Helpers
 
         Private Sub AssociatedObject_SelectionChanged(ByVal sender As Object, ByVal e As GridSelectionChangedEventArgs)
             For Each item In AssociatedObject.SelectedItems.OfType(Of Record)()
-                item.IsRead = True
+
             Next
         End Sub
-
-        Private Class CSharpImpl
-
-            <System.Obsolete("Please refactor calling code to use normal Visual Basic assignment")>
-            Shared Function __Assign(Of T)(ByRef target As T, value As T) As T
-                target = value
-                Return value
-            End Function
-        End Class
     End Class
 End Namespace

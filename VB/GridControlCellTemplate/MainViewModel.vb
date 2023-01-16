@@ -1,3 +1,4 @@
+Imports System.Collections.ObjectModel
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.DataAnnotations
 Imports GridControlCellTemplate.Model
