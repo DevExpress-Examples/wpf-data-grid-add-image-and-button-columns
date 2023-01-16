@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -15,6 +16,9 @@
     <PackageReference Include="devexpress.wpf.grid.core" Version="22.2.3" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Model\Sentences.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Model\Sentences.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
