@@ -2,15 +2,17 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1140226)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# WPF Data Grid - How To Customize Cell Template
+# WPF Data Grid - Add Image and Button Columns
 
-This example demonstrates how to create a custom cell template for a column of GridControl. It includes DataTemplates for image and button columns.
+This example displays columns filled with [Image](https://learn.microsoft.com/en-us/dotnet/api/system.windows.controls.image) and [SimpleButton](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.SimpleButton) objects in the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl). To specify custom content in grid cells, create a DataTemplate and assign it to the [ColumnBase.CellTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellTemplate) property.
+
+![image](https://user-images.githubusercontent.com/65009440/212686679-52ebddc2-52bb-4b8b-81ab-b731606c5dab.png)
 
 ## Implementation details
 
-In this DataTemplate, the image source depends on the `IsRead` property of a source element:
+The image template displays different images based on the `IsRead` property of the data object:
 
-```xml
+```xaml
 <DataTemplate x:Key="ImageCellTemplate">
     <Image>
         <Image.Style>
@@ -29,7 +31,7 @@ In this DataTemplate, the image source depends on the `IsRead` property of a sou
 </DataTemplate>
 ```
 
-The template with a button also depends on the same property. If it is false, the button is disabled:
+The button template also depends on the `IsRead` property. If it is `false`, the button is disabled:
 
 ```xaml
 <DataTemplate x:Key="ButtonCellTemplate">
@@ -40,11 +42,19 @@ The template with a button also depends on the same property. If it is false, th
 </DataTemplate>
 ```
 
+## Files to Review
+
+- [MainWindow.xaml](./CS/GridControlCellTemplate/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/GridControlCellTemplate/MainWindow.xaml))
+- [MainViewModel.cs](./CS/GridControlCellTemplate/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/GridControlCellTemplate/MainViewModel.vb))
+- [ReadOnSelectionBehavior.cs](./CS/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.cs) (VB: [ReadOnSelectionBehavior.vb](./VB/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.vb))
 
 ## Documentation
 
 - [CellTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellTemplate)
+- [Assign Editors to Cells](https://docs.devexpress.com/WPF/401011/controls-and-libraries/data-grid/data-editing-and-validation/modify-cell-values/assign-an-editor-to-a-cell)
 
+## More Examples
 
-## Files to Review
-- [MainWindow.xaml](./CS/GridControlCellTemplate/MainWindow.xaml)
+* [Build Binding Paths in WPF Data Grid Cells](https://github.com/DevExpress-Examples/how-to-build-binding-paths-in-gridcontrol-cells)
+* [WPF Data Grid - Assign a ComboBox Editor to a Column](https://github.com/DevExpress-Examples/wpf-data-grid-assign-combobox-editor-to-column)
+* [WPF Data Grid - Use Custom Editors to Edit Cell Values](https://github.com/DevExpress-Examples/how-to-use-custom-editors-to-edit-cell-values-e1596)
