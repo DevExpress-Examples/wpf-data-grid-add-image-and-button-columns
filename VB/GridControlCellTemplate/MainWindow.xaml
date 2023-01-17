@@ -48,22 +48,20 @@
             </dxmvvm:Interaction.Behaviors>
 
             <dxg:GridControl.Columns>
-                <dxg:GridColumn x:Name="IconColumn"
-                                FieldName="Icon"
+                <dxg:GridColumn FieldName="Icon"
                                 CellTemplate="{StaticResource ImageCellTemplate}"
                                 Width="31" FixedWidth="True"/>
 
                 <dxg:GridColumn FieldName="Text"/>
 
-                <dxg:GridColumn x:Name="DeleteColumn"
-                                FieldName="Delete"
+                <dxg:GridColumn FieldName="Delete"
                                 CellTemplate="{StaticResource ButtonCellTemplate}"
                                 Width="60" FixedWidth="True"/>
 
             </dxg:GridControl.Columns>
 
             <dxg:GridControl.View>
-                <dxg:TableView x:Name="View" AutoWidth="True"/>
+                <dxg:TableView AutoWidth="True"/>
             </dxg:GridControl.View>
         </dxg:GridControl>
     </Grid>

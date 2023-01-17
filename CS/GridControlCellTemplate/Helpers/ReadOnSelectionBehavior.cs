@@ -12,16 +12,17 @@ namespace GridControlCellTemplate.Helpers {
             AssociatedObject.SelectedItemChanged += AssociatedObject_SelectedItemChanged;
         }
 
+        private void AssociatedObject_SelectionChanged(object sender, GridSelectionChangedEventArgs e) {
+            foreach (var item in AssociatedObject.SelectedItems.OfType<Record>()) {
+                item.IsRead = true;
+            }
+        }
+
         private void AssociatedObject_SelectedItemChanged(object sender, SelectedItemChangedEventArgs e) {
             var selectedItem = AssociatedObject.SelectedItem as Record;
 
             if (selectedItem != null) {
                 selectedItem.IsRead = true;
-            }
-        }
-        private void AssociatedObject_SelectionChanged(object sender, GridSelectionChangedEventArgs e) {
-            foreach (var item in AssociatedObject.SelectedItems.OfType<Record>()) {
-                item.IsRead = true;
             }
         }
 
