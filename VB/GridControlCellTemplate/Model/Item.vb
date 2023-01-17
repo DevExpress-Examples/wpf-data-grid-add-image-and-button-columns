@@ -1,6 +1,5 @@
 Imports DevExpress.Mvvm
 Imports System.Collections.Generic
-Imports System.IO
 Imports System.Text.RegularExpressions
 
 Namespace GridControlCellTemplate.Model
@@ -33,8 +32,8 @@ Namespace GridControlCellTemplate.Model
         End Sub
 
         Public Shared Iterator Function GetData(ByVal quantity As Integer) As IEnumerable(Of Record)
-            Dim sentences = Regex.Split(File.ReadAllText("Model/Sentences.txt"), "(?<=[\.!\?])\s+")
-            Dim gen = New Random(42)
+            Dim sentences = Regex.Split(File.ReadAllText("Model/Sentences.txt"), ",")
+            Dim gen = New Random()
             For i As Integer = 0 To quantity - 1
                 Yield New Record(sentences(gen.[Next](sentences.Length)))
             Next

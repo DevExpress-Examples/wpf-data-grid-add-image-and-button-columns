@@ -21,16 +21,16 @@ Namespace GridControlCellTemplate.Helpers
             End If
         End Sub
 
-        Protected Overrides Sub OnDetaching()
-            MyBase.OnDetaching()
-            RemoveHandler AssociatedObject.SelectionChanged, AddressOf AssociatedObject_SelectionChanged
-            RemoveHandler AssociatedObject.SelectedItemChanged, AddressOf AssociatedObject_SelectedItemChanged
-        End Sub
-
         Private Sub AssociatedObject_SelectionChanged(ByVal sender As Object, ByVal e As GridSelectionChangedEventArgs)
             For Each item In AssociatedObject.SelectedItems.OfType(Of Record)()
                 item.IsRead = True
             Next
+        End Sub
+
+        Protected Overrides Sub OnDetaching()
+            MyBase.OnDetaching()
+            RemoveHandler AssociatedObject.SelectionChanged, AddressOf AssociatedObject_SelectionChanged
+            RemoveHandler AssociatedObject.SelectedItemChanged, AddressOf AssociatedObject_SelectedItemChanged
         End Sub
     End Class
 End Namespace
