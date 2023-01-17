@@ -42,15 +42,19 @@ The button template also depends on the `IsRead` property. If it is `false`, the
 </DataTemplate>
 ```
 
+## Files to Review
+
+- [MainWindow.xaml](./CS/GridControlCellTemplate/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/GridControlCellTemplate/MainWindow.xaml))
+- [MainViewModel.cs](./CS/GridControlCellTemplate/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/GridControlCellTemplate/MainViewModel.vb))
+- [ReadOnSelectionBehavior.cs](./CS/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.cs) (VB: [ReadOnSelectionBehavior.vb](./VB/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.vb))
 
 ## Documentation
 
 - [CellTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellTemplate)
 - [Assign Editors to Cells](https://docs.devexpress.com/WPF/401011/controls-and-libraries/data-grid/data-editing-and-validation/modify-cell-values/assign-an-editor-to-a-cell)
 
+## More Examples
 
-## Files to Review
-
-- [MainWindow.xaml](./CS/GridControlCellTemplate/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/GridControlCellTemplate/MainWindow.xaml))
-- [MainViewModel.cs](./CS/GridControlCellTemplate/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/GridControlCellTemplate/MainViewModel.vb))
-- [ReadOnSelectionBehavior.cs](./CS/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.cs) (VB: [ReadOnSelectionBehavior.vb](./VB/GridControlCellTemplate/Helpers/ReadOnSelectionBehavior.vb))
+* [Build Binding Paths in WPF Data Grid Cells](https://github.com/DevExpress-Examples/how-to-build-binding-paths-in-gridcontrol-cells)
+* [WPF Data Grid - Assign a ComboBox Editor to a Column](https://github.com/DevExpress-Examples/wpf-data-grid-assign-combobox-editor-to-column)
+* [WPF Data Grid - Use Custom Editors to Edit Cell Values](https://github.com/DevExpress-Examples/how-to-use-custom-editors-to-edit-cell-values-e1596)
