@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Images" Version="22.2.3" />
-    <PackageReference Include="devexpress.wpf.grid.core" Version="22.2.3" />
+    <PackageReference Include="DevExpress.Images" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Grid.Core" Version="22.2.*-*" />
   </ItemGroup>
 
   <ItemGroup>

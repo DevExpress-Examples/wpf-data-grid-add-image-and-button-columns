@@ -3,10 +3,8 @@ using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using GridControlCellTemplate.Model;
 
-namespace GridControlCellTemplate
-{
-    public class MainViewModel : ViewModelBase
-    {
+namespace GridControlCellTemplate {
+    public class MainViewModel : ViewModelBase {
         public ObservableCollection<Record> Source { get; } = new ObservableCollection<Record>(Record.GetData(100));
 
         [Command]

@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace GridControlCellTemplate.Model
-{
-    public class Record : BindableBase
-    {
+namespace GridControlCellTemplate.Model {
+    public class Record : BindableBase {
         public string Text {
             get => GetValue<string>();
             set => SetValue(value);
@@ -23,9 +21,9 @@ namespace GridControlCellTemplate.Model
         }
 
         public static IEnumerable<Record> GetData(int quantity) {
-            var sentences = Regex.Split(File.ReadAllText(@"Model/Sentences.txt"), @"(?<=[\.!\?])\s+");
+            var sentences = Regex.Split(File.ReadAllText(@"Model/Sentences.txt"), ",");
 
-            var gen = new Random(42);
+            var gen = new Random();
 
             for (int i = 0; i < quantity; i++) {
                 yield return new Record(sentences[gen.Next(sentences.Length)]);
