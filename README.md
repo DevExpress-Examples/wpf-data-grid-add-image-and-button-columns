@@ -15,20 +15,15 @@ The image template displays different images based on the `IsRead` property of t
 
 ```xaml
 <DataTemplate x:Key="ImageCellTemplate">
-    <Image>
-        <Image.Style>
-            <Style TargetType="Image">
-                <Setter Property="Source"
-                        Value="{dx:DXImage 'SvgImages/Icon Builder/Actions_EnvelopeClose.svg'}"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Row.IsRead}" Value="True">
-                        <Setter Property="Source"
-                                Value="{dx:DXImage 'SvgImages/Icon Builder/Actions_EnvelopeOpen.svg'}"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </Image.Style>
-    </Image>
+    <Image x:Name="MyIcon" 
+           Source="{dx:DXImage 'SvgImages/Icon Builder/Actions_EnvelopeClose.svg'}"/>
+    <DataTemplate.Triggers>
+        <DataTrigger Binding="{Binding Row.IsRead}" Value="True">
+            <Setter TargetName="MyIcon" 
+                    Property="Source" 
+                    Value="{dx:DXImage 'SvgImages/Icon Builder/Actions_EnvelopeOpen.svg'}"/>
+        </DataTrigger>
+    </DataTemplate.Triggers>
 </DataTemplate>
 ```
 
